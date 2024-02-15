@@ -1,4 +1,3 @@
-```markdown
 # Rust Smart Contract for Adding Funds
 
 This repository contains a Rust smart contract designed for the Substrate blockchain framework. The contract provides a simple yet effective functionality that allows users to add funds to their account balance. It utilizes the frame_support and frame_system libraries from Substrate's framework to create a secure and efficient smart contract.
@@ -17,7 +16,6 @@ The smart contract defines a module with a single function add_funds that enable
 
 ## Code Explanation
 
-```rust
 use frame_support::{decl_module, dispatch::DispatchResult};
 use frame_system::{self as system, ensure_signed};
 
@@ -34,7 +32,6 @@ decl_module! {
         }
     }
 }
-```
 
 1. Imports: Essential macros and types for module definition and dispatch results handling.
 2. Trait Definition: Custom trait inheriting from system-level traits for blockchain interaction.
