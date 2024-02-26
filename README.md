@@ -16,15 +16,18 @@ The smart contract defines a module with a single function add_funds that enable
 
 ## Code Explanation
 
-// 1.
 ```rust
+// 1.
 use frame_support::{decl_module, dispatch::DispatchResult};
 use frame_system::{self as system, ensure_signed};
 ```
 
+```rust
 // 2. 
 pub trait Trait: system::Trait {}
+```
 
+```rust
 // 3.
 decl_module! {
     pub struct Module<T: Trait> for enum Call where origin: T::Origin {
@@ -37,7 +40,7 @@ decl_module! {
         }
     }
 }
-
+```
 1. Imports: Essential macros and types for module definition and dispatch results handling.
 2. Trait Definition: Custom trait inheriting from system-level traits for blockchain interaction.
 3. Module Structure: Defines the smart contract's core structure and its callable function.
