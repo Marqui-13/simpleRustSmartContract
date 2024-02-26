@@ -17,8 +17,10 @@ The smart contract defines a module with a single function add_funds that enable
 ## Code Explanation
 
 // 1.
+```rust
 use frame_support::{decl_module, dispatch::DispatchResult};
 use frame_system::{self as system, ensure_signed};
+```
 
 // 2. 
 pub trait Trait: system::Trait {}
