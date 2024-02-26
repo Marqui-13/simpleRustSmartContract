@@ -16,17 +16,20 @@ The smart contract defines a module with a single function add_funds that enable
 
 ## Code Explanation
 
+// 1.
 use frame_support::{decl_module, dispatch::DispatchResult};
 use frame_system::{self as system, ensure_signed};
 
+// 2. 
 pub trait Trait: system::Trait {}
 
+// 3.
 decl_module! {
     pub struct Module<T: Trait> for enum Call where origin: T::Origin {
         #[weight = 0]
         pub fn add_funds(origin, amount: u32) -> DispatchResult {
             let sender = ensure_signed(origin)?;
-            // Add the funds to the sender's account balance
+            // 4. Add the funds to the sender's account balance
             <system::Module<T>>::deposit_creating(&sender, amount.into());
             Ok(())
         }
